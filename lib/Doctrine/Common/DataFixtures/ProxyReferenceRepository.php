@@ -75,7 +75,7 @@ class ProxyReferenceRepository extends ReferenceRepository
                 $name,
                 $this->getManager()->getReference(
                     $proxyReference[0], // entity class name
-                    $proxyReference[1]  // identifiers
+                    is_array($proxyReference[1]) ? $proxyReference[1]['id'] : $proxyReference[1]  // identifiers
                 )
             );
         }
